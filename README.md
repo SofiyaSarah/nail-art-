@@ -38,6 +38,6 @@ MIT
 ---
 
 **Contact:** sofiyasarah31@gmail.com  
-**Shop:** [Sugar Cosmetics](https://www.sugarcosmetics.com)
+**Shop:** [ECommerce site](https://www.sugarcosmetics.com)
 
 *Built with 💖 by SofiyaSarah*
