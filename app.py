@@ -6,6 +6,7 @@ import requests
 from io import BytesIO
 import base64
 
+print("welcome to nail art")
 
 # Install required packages if not available
 try:
