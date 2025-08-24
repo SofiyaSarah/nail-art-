@@ -6,7 +6,7 @@ import requests
 from io import BytesIO
 import base64
 
-print("welcome to nail art")
+
 
 # Install required packages if not available
 try:
@@ -20,41 +20,41 @@ COMPREHENSIVE_COLOR_PALETTE = {
     "very_light_specific": {
         "display_name": "🌸 Perfect for Very Light Skin",
         "colors": [
-            {"name": "Soft Rose Quartz", "hex": "#F7E7E7", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-50-pearl-pink", "price": "₹149"},
-            {"name": "Delicate Lavender", "hex": "#E6E6FA", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-lavender-love", "price": "₹149"},
-            {"name": "Cool Nude Pink", "hex": "#F5E6E8", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer", "price": "₹149"},
-            {"name": "Ice Blue", "hex": "#E0F6FF", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-sky-high", "price": "₹149"},
-            {"name": "Barely There Shimmer", "hex": "#F8F8FF", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-glitter-01-rose-quartz", "price": "₹199"},
+            {"name": "Soft Rose Quartz", "hex": "#F7E7E7", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer", "price": "₹219"},
+            {"name": "Delicate Lavender", "hex": "#E6E6FA", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-matte?variant=42411689377875", "price": "₹249"},
+            {"name": "Cool Nude Pink", "hex": "#F5E6E8", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer", "price": "₹249"},
+            {"name": "Ice Blue", "hex": "#E0F6FF", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-matte?variant=42411689345107", "price": "₹249"},
+            {"name": "Barely There Shimmer", "hex": "#F8F8FF", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-matte?variant=42411689181267", "price": "₹249"},
         ]
     },
     "light_specific": {
         "display_name": "🌺 Perfect for Light Skin",
         "colors": [
-            {"name": "Peachy Keen", "hex": "#FFDBAC", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-peach-please", "price": "₹299"},
-            {"name": "Coral Blush", "hex": "#FF7F7F", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-coral-vibes", "price": "₹149"},
-            {"name": "Soft Mauve", "hex": "#E0B4D6", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-mauve-magic", "price": "₹149"},
-            {"name": "Classic French Pink", "hex": "#FFB6C1", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-pink-dreams", "price": "₹149"},
-            {"name": "Light Berry", "hex": "#DA70D6", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-berry-bliss", "price": "₹149"},
+            {"name": "Peachy Keen", "hex": "#FFDBAC", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-matte?variant=42411689214035", "price": "₹249"},
+            {"name": "Coral Blush", "hex": "#FF7F7F", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-classic?variant=42411699372115", "price": "₹199"},
+            {"name": "Soft Mauve", "hex": "#E0B4D6", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-classic?variant=42411699437651&country=IN&currency=INR&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gads=Pmax&utm_source=&utm_medium=&utm_campaign=-22391183439&utm_content=-&gad_source=1&gad_campaignid=22449928068&gbraid=0AAAAADfcShMtT17AvSwpd1NWNXuW8sB6H&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApbBGPFV5TS299Fca78hjjgyUZL0_lXeoXpoWgQz8F9fBsRJnY4HcXcaAiXGEALw_wcB", "price": "₹199"},
+            {"name": "Classic French Pink", "hex": "#FFB6C1", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-matte?currency=INR&variant=41733370839123&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=2aa26d8bb700&gads=Pmax&utm_source=&utm_medium=&utm_campaign=-22391183439&utm_content=-&gad_source=1&gad_campaignid=22449928068&gbraid=0AAAAADfcShMtT17AvSwpd1NWNXuW8sB6H&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApYNY0TJzz7lErEMTCGa31p-PmRfWKce7a8pJYP1HVsiApqnvaSPz5gaArM4EALw_wcB", "price": "₹249"},
+            {"name": "Light Berry", "hex": "#DA70D6", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-classic?variant=42411698716755", "price": "₹199"},
         ]
     },
     "light_medium_specific": {
         "display_name": "🍑 Perfect for Light-Medium Skin",
         "colors": [
-            {"name": "Warm Terracotta", "hex": "#E2725B", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-terracotta-dream", "price": "₹299"},
-            {"name": "Golden Coral", "hex": "#FF6347", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-coral-vibes", "price": "₹149"},
-            {"name": "Warm Nude", "hex": "#D2B48C", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-caramel-crush", "price": "₹149"},
-            {"name": "Sunset Orange", "hex": "#FF8C69", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-sunset-vibes", "price": "₹149"},
-            {"name": "Rose Gold", "hex": "#E8B4B8", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-rose-gold", "price": "₹299"},
+            {"name": "Warm Terracotta", "hex": "#E2725B", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-matte?variant=42411689279571&country=IN&currency=INR&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gads=Pmax&utm_source=&utm_medium=&utm_campaign=-22391183439&utm_content=-&gad_source=1&gad_campaignid=22449928068&gbraid=0AAAAADfcShMtT17AvSwpd1NWNXuW8sB6H&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApaz43KLIo1aDV8L23NjIqLS3fkyC7I8FS85l-Pi-m8R-v9qnfM3tTkaAmDYEALw_wcB", "price": "₹249"},
+            {"name": "Golden Coral", "hex": "#FF6347", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer?currency=INR&variant=42411495030867&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=2aa26d8bb700&gads=Pmax&utm_source=&utm_medium=&utm_campaign=-22391183439&utm_content=-&gad_source=1&gad_campaignid=22449928068&gbraid=0AAAAADfcShMtT17AvSwpd1NWNXuW8sB6H&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApalHUVPKInq2N3wCAXkrataLwwb88Gibk4Wj9lcXtieX0tQzNze13QaAkwWEALw_wcB", "price": "₹129"},
+            {"name": "Warm Nude", "hex": "#D2B48C", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-matte?variant=42411689181267&country=IN&currency=INR&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&gads=Pmax&utm_source=&utm_medium=&utm_campaign=-22391183439&utm_content=-&gad_source=1&gad_campaignid=22449928068&gbraid=0AAAAADfcShMtT17AvSwpd1NWNXuW8sB6H&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApbrGqO4WXIra0KHn_3GBTSaCnxuleZurUPRc6irPqushP7HZYpqXxEaAj2yEALw_wcB", "price": "₹149"},
+            {"name": "Sunset Orange", "hex": "#FF8C69", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-classic?variant=42411699142739", "price": "₹199"},
+            {"name": "Rose Gold", "hex": "#E8B4B8", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-glitter?currency=INR&variant=42411495915603&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=2aa26d8bb700&gads=Pmax&utm_source=&utm_medium=&utm_campaign=-22391183439&utm_content=-&gad_source=1&gad_campaignid=22449928068&gbraid=0AAAAADfcShMtT17AvSwpd1NWNXuW8sB6H&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApZtR7H0SvPO0klnikbN84OgNZ5lsnvUDIQhI1SRlud4JrNApsultjUaArudEALw_wcB", "price": "₹299"},
         ]
     },
     "medium_specific": {
         "display_name": "🌿 Perfect for Medium Skin",
         "colors": [
-            {"name": "Rich Burgundy", "hex": "#800020", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-burgundy-beauty", "price": "₹149"},
-            {"name": "Deep Coral", "hex": "#FF5722", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-deep-coral", "price": "₹149"},
-            {"name": "Olive Green", "hex": "#808000", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-olive-branch", "price": "₹149"},
-            {"name": "Warm Brown", "hex": "#8B4513", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-chocolate-truffle", "price": "₹149"},
-            {"name": "Copper Glow", "hex": "#B87333", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-copper-penny", "price": "₹299"},
+            {"name": "Rich Burgundy", "hex": "#800020", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-glitter?variant=42411495948371", "price": "₹149"},
+            {"name": "Deep Coral", "hex": "#FF5722", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer?variant=42411495391315", "price": "₹149"},
+            {"name": "Olive Green", "hex": "#808000", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer?variant=42411495424083", "price": "₹149"},
+            {"name": "Warm Brown", "hex": "#8B4513", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer?variant=42411495063635", "price": "₹149"},
+            {"name": "Copper Glow", "hex": "#B87333", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer?variant=42411495227475", "price": "₹299"},
         ]
     },
     "medium_dark_specific": {
@@ -70,7 +70,7 @@ COMPREHENSIVE_COLOR_PALETTE = {
     "dark_specific": {
         "display_name": "🔥 Perfect for Dark Skin",
         "colors": [
-            {"name": "Electric Lime", "hex": "#CCFF00", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-neon-lime", "price": "₹149"},
+            {"name": " Lime", "hex": "#CCFF00", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-neon-lime", "price": "₹149"},
             {"name": "Bright Fuchsia", "hex": "#FF00FF", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-fuchsia-fever", "price": "₹149"},
             {"name": "Royal Blue", "hex": "#4169E1", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-royal-blue", "price": "₹149"},
             {"name": "Gold Chrome", "hex": "#FFD700", "link": "https://www.sugarcosmetics.com/products/sugar-pop-glitter-nail-lacquer-gold-dust", "price": "₹199"},
@@ -80,39 +80,39 @@ COMPREHENSIVE_COLOR_PALETTE = {
     "very_dark_specific": {
         "display_name": "💎 Perfect for Very Dark Skin",
         "colors": [
-            {"name": "Neon Pink", "hex": "#FF6EC7", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-neon-pink", "price": "₹149"},
-            {"name": "Electric Blue", "hex": "#00FFFF", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-electric-blue", "price": "₹149"},
-            {"name": "Holographic Silver", "hex": "#E0E0E0", "link": "https://www.sugarcosmetics.com/products/sugar-pop-glitter-nail-lacquer-holographic", "price": "₹199"},
+            {"name": " Pink", "hex": "#FF6EC7", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-classic?variant=42411698847827", "price": "₹149"},
+            {"name": "Electric Blue", "hex": "#00FFFF", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-classic?variant=42411698651219", "price": "₹149"},
+            {"name": "Holographic Silver", "hex": "#E0E0E0", "link": "https://www.amazon.in/Indie-Nails-cruelty-free-resistant-Glitter/dp/B0C412FS58?th=1", "price": "₹199"},
             {"name": "Bright White", "hex": "#FFFFFF", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-pure-white", "price": "₹149"},
-            {"name": "Neon Green", "hex": "#39FF14", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-neon-green", "price": "₹149"},
+            {"name": "Green", "hex": "#39FF14", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-neon-green", "price": "₹149"},
         ]
     },
     # Universal categories for general browsing
     "classic_reds": {
         "display_name": "❤️ Classic Reds",
         "colors": [
-            {"name": "Cherry Pop", "hex": "#DC143C", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-cherry-on-top", "price": "₹299"},
-            {"name": "Ruby Red", "hex": "#E0115F", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-ruby-tuesday", "price": "₹149"},
-            {"name": "Crimson Glory", "hex": "#B22222", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-crimson-classic", "price": "₹299"},
-            {"name": "Wine Berry", "hex": "#722F37", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-wine-down", "price": "₹149"},
+            {"name": "Cherry Pop", "hex": "#DC143C", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-classic?variant=42411699175507", "price": "₹299"},
+            {"name": "Ruby Red", "hex": "#E0115F", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-classic?variant=42411699142739", "price": "₹149"},
+            {"name": "Crimson Glory", "hex": "#B22222", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-classic?variant=42411699306579", "price": "₹299"},
+            {"name": "Wine Berry", "hex": "#722F37", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-classic-30-maroon-meadow", "price": "₹149"},
         ]
     },
     "nude_collection": {
         "display_name": "🤎 Nude Collection",
         "colors": [
-            {"name": "Barely There Nude", "hex": "#F5E6D3", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer", "price": "₹149"},
-            {"name": "Warm Taupe", "hex": "#D4B5A0", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-social-sepia", "price": "₹299"},
-            {"name": "Caramel Kiss", "hex": "#D2B48C", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-caramel-crush", "price": "₹149"},
-            {"name": "Mocha Cream", "hex": "#C8A882", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-coffee-break", "price": "₹149"},
+            {"name": "Barely There Nude", "hex": "#F5E6D3", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer?variant=42411495194707", "price": "₹149"},
+            {"name": "Warm Taupe", "hex": "#D4B5A0", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer?variant=42411494080595", "price": "₹299"},
+            {"name": "Caramel Kiss", "hex": "#D2B48C", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer?variant=42411494998099", "price": "₹149"},
+            {"name": "Mocha Cream", "hex": "#C8A882", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer?variant=42411495424083", "price": "₹149"},
         ]
     },
     "metallics_glitter": {
         "display_name": "✨ Metallics & Glitter",
         "colors": [
-            {"name": "Rose Gold Glam", "hex": "#E8B4B8", "link": "https://www.sugarcosmetics.com/products/tip-tac-toe-nail-lacquer-rose-gold-glitter", "price": "₹299"},
-            {"name": "Gold Rush", "hex": "#FFD700", "link": "https://www.sugarcosmetics.com/products/sugar-pop-glitter-nail-lacquer-gold-dust", "price": "₹199"},
-            {"name": "Silver Storm", "hex": "#C0C0C0", "link": "https://www.sugarcosmetics.com/products/sugar-pop-glitter-nail-lacquer-silver-shine", "price": "₹199"},
-            {"name": "Holographic Magic", "hex": "#E0E0E0", "link": "https://www.sugarcosmetics.com/products/sugar-pop-glitter-nail-lacquer-holographic", "price": "₹199"},
+            {"name": "Rose Gold Glam", "hex": "#E8B4B8", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-glitter?currency=INR&variant=42261146599507&utm_source=google&utm_medium=cpc&utm_campaign=Google+Shopping&stkn=2aa26d8bb700&gads=Pmax&utm_source=&utm_medium=&utm_campaign=-22391183439&utm_content=-&gad_source=1&gad_campaignid=22449928068&gbraid=0AAAAADfcShMtT17AvSwpd1NWNXuW8sB6H&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApZtR7H0SvPO0klnikbN84OgNZ5lsnvUDIQhI1SRlud4JrNApsultjUaArudEALw_wcB", "price": "₹299"},
+            {"name": "Gold Rush", "hex": "#FFD700", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-glitter?currency=INR&variant=42411495718995&utm_source=google&utm_medium=cpc&utm_campaign=Google+Shopping&stkn=2aa26d8bb700&gads=Pmax&utm_source=&utm_medium=&utm_campaign=-22391183439&utm_content=-&gad_source=1&gad_campaignid=22449928068&gbraid=0AAAAADfcShMtT17AvSwpd1NWNXuW8sB6H&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApZtR7H0SvPO0klnikbN84OgNZ5lsnvUDIQhI1SRlud4JrNApsultjUaArudEALw_wcB", "price": "₹199"},
+            {"name": "Silver Storm", "hex": "#C0C0C0", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-glitter?currency=INR&variant=42411495784531&utm_source=google&utm_medium=cpc&utm_campaign=Google+Shopping&stkn=2aa26d8bb700&gads=Pmax&utm_source=&utm_medium=&utm_campaign=-22391183439&utm_content=-&gad_source=1&gad_campaignid=22449928068&gbraid=0AAAAADfcShMtT17AvSwpd1NWNXuW8sB6H&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApZtR7H0SvPO0klnikbN84OgNZ5lsnvUDIQhI1SRlud4JrNApsultjUaArudEALw_wcB", "price": "₹199"},
+            {"name": "Holographic Magic", "hex": "#E0E0E0", "link": "https://www.sugarcosmetics.com/products/sugar-pop-nail-lacquer-glitter?currency=INR&variant=42411495948371&utm_source=google&utm_medium=cpc&utm_campaign=Google+Shopping&stkn=2aa26d8bb700&gads=Pmax&utm_source=&utm_medium=&utm_campaign=-22391183439&utm_content=-&gad_source=1&gad_campaignid=22449928068&gbraid=0AAAAADfcShMtT17AvSwpd1NWNXuW8sB6H&gclid=Cj0KCQjw8KrFBhDUARIsAMvIApZtR7H0SvPO0klnikbN84OgNZ5lsnvUDIQhI1SRlud4JrNApsultjUaArudEALw_wcB", "price": "₹199"},
         ]
     }
 }
