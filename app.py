@@ -5,6 +5,7 @@ from PIL import Image
 import requests
 from io import BytesIO
 import base64
+print('hello')
 
 # Install required packages if not available
 try:
