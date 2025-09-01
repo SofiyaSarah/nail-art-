@@ -23,7 +23,7 @@ cd nail-art-
 pip install streamlit opencv-python pillow mediapipe
 streamlit run app.py
 ```
-Open [http://localhost:8501](http://localhost:8501) in your browser.
+
 
 ## Features
 
